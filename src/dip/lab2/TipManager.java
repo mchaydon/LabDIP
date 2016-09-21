@@ -10,17 +10,14 @@ package dip.lab2;
  * @author Mike
  */
 public class TipManager {
-    private Tip tip;
+    private TipCalculator tip;
     
-    public final void setTypeOfTip(Tip tip){
+    public final void setTypeOfTip(TipCalculator tip){
         this.tip = tip;
     }
     
     public final double getTipAmount(){
        return tip.getTip();
     }
-    
-    public final void setBagAmount(int bag){
-        tip.setBaseTipPerBag(bag);
-    }
+
 }

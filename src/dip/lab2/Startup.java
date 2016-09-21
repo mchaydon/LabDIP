@@ -23,22 +23,20 @@ public class Startup {
         TipManager mgr = new TipManager();
         
         //Create different types of tips 
-        Tip tipFoodService = new FoodServiceTipCalculator(ServiceQuality.POOR, 15);
-        Tip tipBaggage = new BaggageServiceTipCalculator(ServiceQuality.GOOD, 15);
+        TipCalculator tipFoodService = new FoodServiceTipCalculator(ServiceQuality.POOR, 15);
+        TipCalculator tipBaggage = new BaggageServiceTipCalculator(ServiceQuality.GOOD, 15);
         
         //Pass the manager the first tip type
         mgr.setTypeOfTip(tipFoodService);
         /* While the Food Service Calculator does not calculate off of items
         ** assigning a value does not break the code.*/
-        mgr.setBagAmount(5);
         System.out.println(mgr.getTipAmount());
         
         //Pass the manager the second tip type
         mgr.setTypeOfTip(tipBaggage);
-        mgr.setBagAmount(5);
         System.out.println(mgr.getTipAmount());
         
-        /* Tip manager relies on the tip interface. Then the individual types
+        /* TipCalculator manager relies on the tip interface. Then the individual types
         **  of tips extend that interface.*/
         
         
