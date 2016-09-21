@@ -21,7 +21,7 @@ public class FoodServiceTipCalculator implements Tip {
 
     public FoodServiceTipCalculator(ServiceQuality q, double billAmt) {
         this.setServiceRating(q);
-        this.setBill(billAmt);
+        this.setItemTotal(billAmt);
     }
 
     
@@ -44,18 +44,21 @@ public class FoodServiceTipCalculator implements Tip {
         return tip;
     }
 
-    public final void setBill(double billAmt) {
-        if(billAmt < MIN_BILL) {
+    @Override
+    public final void setItemTotal(double itemTotal) {
+        if(itemTotal < MIN_BILL) {
             throw new IllegalArgumentException(BILL_ENTRY_ERR);
         }
-        bill = billAmt;
+        bill = itemTotal;
     }
 
+    @Override
     public final void setServiceRating(ServiceQuality q) {
         // No need to validate because enums provide type safety!
         serviceQuality = q;
     }
 
+    @Override
     public final ServiceQuality getServiceQuality() {
         return serviceQuality;
     }

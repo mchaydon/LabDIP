@@ -11,6 +11,12 @@ package dip.lab2;
  */
 public interface Tip {
     public abstract double getTip();
+    
+    public abstract void setItemTotal(double itemTotal);
 
     public abstract void setBaseTipPerBag(double baseTipPerBag);
+    
+    public abstract void setServiceRating(ServiceQuality q);
+    
+    public abstract ServiceQuality getServiceQuality();
 }

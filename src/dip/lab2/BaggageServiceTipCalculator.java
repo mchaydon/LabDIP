@@ -23,7 +23,7 @@ public class BaggageServiceTipCalculator implements Tip {
 
     public BaggageServiceTipCalculator(ServiceQuality q, double bags) {
         this.setServiceRating(q); // perform validation
-        this.setBagCount((int)bags);
+        this.setItemTotal(bags);
 
         baseTipPerBag = 1.00; // set default value
     }
@@ -47,11 +47,13 @@ public class BaggageServiceTipCalculator implements Tip {
         return tip;
     }
 
+    @Override
     public final void setServiceRating(ServiceQuality q) {
         // No need to validate because enums provide type safety!
         serviceQuality = q;
     }
 
+    @Override
     public final ServiceQuality getServiceQuality() {
         return serviceQuality;
     }
@@ -60,12 +62,13 @@ public class BaggageServiceTipCalculator implements Tip {
         return bagCount;
     }
 
-    public final void setBagCount(int bagCount) {
+    @Override
+    public final void setItemTotal(double itemTotal) {
         if(bagCount < 0) {
             throw new IllegalArgumentException(
                     "bag count must be greater than or equal to zero");
         }
-        this.bagCount = bagCount;
+        this.bagCount = (int)itemTotal;
     }
 
     public final double getBaseTipPerBag() {

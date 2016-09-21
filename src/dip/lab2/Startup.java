@@ -26,14 +26,14 @@ public class Startup {
         Tip tipFoodService = new FoodServiceTipCalculator(ServiceQuality.POOR, 15);
         Tip tipBaggage = new BaggageServiceTipCalculator(ServiceQuality.GOOD, 15);
         
-        //Test for Food Service Tip Calculator
+        //Pass the manager the first tip type
         mgr.setTypeOfTip(tipFoodService);
         /* While the Food Service Calculator does not calculate off of items
         ** assigning a value does not break the code.*/
         mgr.setBagAmount(5);
         System.out.println(mgr.getTipAmount());
         
-        //Test for BaggageService Calculator
+        //Pass the manager the second tip type
         mgr.setTypeOfTip(tipBaggage);
         mgr.setBagAmount(5);
         System.out.println(mgr.getTipAmount());
