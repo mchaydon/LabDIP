@@ -18,12 +18,29 @@ import javax.swing.JOptionPane;
  * 
  * @author your name goes here
  */
-public class Startup {
-    public static enum ServiceQuality {
-           GOOD, FAIR, POOR
-    };
- 
+public class Startup { 
     public static void main(String[] args) {
+        TipManager mgr = new TipManager();
+        
+        //Create different types of tips 
+        Tip tipFoodService = new FoodServiceTipCalculator(ServiceQuality.POOR, 15);
+        Tip tipBaggage = new BaggageServiceTipCalculator(ServiceQuality.GOOD, 15);
+        
+        //Test for Food Service Tip Calculator
+        mgr.setTypeOfTip(tipFoodService);
+        /* While the Food Service Calculator does not calculate off of items
+        ** assigning a value does not break the code.*/
+        mgr.setBagAmount(5);
+        System.out.println(mgr.getTipAmount());
+        
+        //Test for BaggageService Calculator
+        mgr.setTypeOfTip(tipBaggage);
+        mgr.setBagAmount(5);
+        System.out.println(mgr.getTipAmount());
+        
+        /* Tip manager relies on the tip interface. Then the individual types
+        **  of tips extend that interface.*/
+        
         
         
     }
