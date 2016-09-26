@@ -13,17 +13,17 @@ public class Startup {
     public static void main(String[] args) {
         //Config
         //Create Input Objects
-        KeyboardInput k1 = new KeyboardInput();
-        MessageRandomizer mr1 = new MessageRandomizer();
+        KeyboardInput keyboardInput = new KeyboardInput();
+        RandomMessageInput randomMessageInput = new RandomMessageInput();
         
         //Create Output Objects
-        ConsoleOutput c1 = new ConsoleOutput();
-        GUIOutput g1 = new GUIOutput();
+        ConsoleOutput consoleOuput = new ConsoleOutput();
+        GUIOutput guiOutput = new GUIOutput();
         
         //Create MessageService
-        MessageService m1 = new MessageService(mr1, c1);
+        MessageService m1 = new MessageService(randomMessageInput, guiOutput);
         
         m1.doMessage();
-        
+       
     }
 }

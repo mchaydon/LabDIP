@@ -11,19 +11,19 @@ import java.util.Random;
  *
  * @author Mike
  */
-public class MessageRandomizer implements Input{
-    String[] messages = {"Good morning!", "Your dreams don't work unless you do.", "Doubt kills dreams more than failure ever will" };
+public class RandomMessageInput implements Input{
+    String[] messages = {"Good morning!", "Your dreams don't work unless you do.", "Doubt kills dreams more than failure ever will", "Good-bye and hello, as always." };
     Random rand = new Random();
-    int n;
+    int number;
     
     @Override
-    public void setMessage() {
-        n = rand.nextInt(3);
+    public final void setMessage() {
+        number = rand.nextInt(4);
     }
 
     @Override
-    public Object getMessage() {
-        return messages[n];
+    public final Object getMessage() {
+        return messages[number];
     }
     
     

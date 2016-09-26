@@ -12,13 +12,7 @@ package dip.lab3.student.solution1;
 public class ConsoleOutput implements Output{
 
     @Override
-    public void outputMessage(Object message) {
+    public final void outputMessage(Object message) {
         System.out.println(message);
-    }
- 
-    public static void main(String[] args) {
-        String message = "Hello World";
-        ConsoleOutput c1 = new ConsoleOutput();
-        c1.outputMessage(message);
     }
 }

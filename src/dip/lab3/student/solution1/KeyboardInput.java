@@ -16,13 +16,13 @@ public class KeyboardInput implements Input{
     private String message;
 
     @Override
-    public void setMessage() {
+    public final void setMessage() {
         System.out.print("What would you like to be your message? ");
         message = input.nextLine();
     }
 
     @Override
-    public Object getMessage() {
+    public final Object getMessage() {
         return message;
     }
     
