@@ -18,7 +18,7 @@ public class MessageService {
         this.output = output;
     }
     
-    public void doMessage(){
+    public final void doMessage(){
         input.setMessage();
         output.outputMessage(input.getMessage());
     }
