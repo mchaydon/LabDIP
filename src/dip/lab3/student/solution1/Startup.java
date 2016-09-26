@@ -21,7 +21,7 @@ public class Startup {
         GUIOutput guiOutput = new GUIOutput();
         
         //Create MessageService
-        MessageService messageService = new MessageService(randomMessageInput, guiOutput);
+        MessageService messageService = new MessageService(keyboardInput, guiOutput);
         
         messageService.doMessage();
        

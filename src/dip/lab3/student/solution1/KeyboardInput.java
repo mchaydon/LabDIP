@@ -22,7 +22,7 @@ public class KeyboardInput implements Input{
     }
 
     @Override
-    public final Object getMessage() {
+    public final String getMessage() {
         return message;
     }
     
