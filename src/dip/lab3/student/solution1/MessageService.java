@@ -10,16 +10,16 @@ package dip.lab3.student.solution1;
  * @author Mike
  */
 public class MessageService {
-    private Input input;
-    private Output output;
+    private MessageInput MessageInput;
+    private MessageOutput MessageOutput;
     
-    public MessageService(Input input, Output output){
-        this.input = input;
-        this.output = output;
+    public MessageService(MessageInput input, MessageOutput output){
+        this.MessageInput = input;
+        this.MessageOutput = output;
     }
     
-    public final void doMessage(){
-        input.setMessage();
-        output.outputMessage(input.getMessage());
+    public final void processMessage(){
+        MessageInput.inputMessage();
+        MessageOutput.outputMessage(MessageInput.ouputMessage());
     }
 }

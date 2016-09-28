@@ -11,18 +11,18 @@ import java.util.Scanner;
  *
  * @author Mike
  */
-public class KeyboardInput implements Input{
+public class KeyboardInput implements MessageInput{
     private Scanner input = new Scanner(System.in);
     private String message;
 
     @Override
-    public final void setMessage() {
+    public final void inputMessage() {
         System.out.print("What would you like to be your message? ");
         message = input.nextLine();
     }
 
     @Override
-    public final String getMessage() {
+    public final String ouputMessage() {
         return message;
     }
     
